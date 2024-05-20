@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses List</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.courses-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.course {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.course:last-child {
+    border-bottom: none;
+}
+
+.course-title {
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+}
+
+.course-description {
+    margin: 0;
+    color: #666;
+}
+
+    </style>
+</head>
+<body>
+    <div class="courses-container">
+        <h2>Our Courses</h2>
+        <div id="coursesList"></div>
+    </div>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const courses = [
+            {
+                title: 'Introduction to Computer Science',
+                description: 'Learn the basics of computer science and programming.'
+            },
+            {
+                title: 'Web Development Bootcamp',
+                description: 'Become a full-stack web developer with our comprehensive bootcamp.'
+            },
+            {
+                title: 'Data Science with Python',
+                description: 'Analyze and visualize data using Python and its libraries.'
+            },
+            {
+                title: 'Machine Learning',
+                description: 'Understand the fundamentals of machine learning and build your own models.'
+            },
+            {
+                title: 'Digital Marketing',
+                description: 'Master the art of digital marketing and SEO strategies.'
+            }
+        ];
+    
+        const coursesList = document.getElementById('coursesList');
+    
+        courses.forEach(course => {
+            const courseDiv = document.createElement('div');
+            courseDiv.className = 'course';
+            
+            const courseTitle = document.createElement('div');
+            courseTitle.className = 'course-title';
+            courseTitle.textContent = course.title;
+            
+            const courseDescription = document.createElement('div');
+            courseDescription.className = 'course-description';
+            courseDescription.textContent = course.description;
+            
+            courseDiv.appendChild(courseTitle);
+            courseDiv.appendChild(courseDescription);
+            
+            coursesList.appendChild(courseDiv);
+        });
+    });
+    </script>
+</body>
+</html>

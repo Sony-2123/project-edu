@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Website</title>
+ <style>
+    body, h1, h2, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+     color: red;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: aqua;
+    }
+    
+    header {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+    }
+    
+    .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+    }
+    
+    nav ul li a.button {
+        background: #007BFF;
+        border-radius: 5px;
+    }
+    
+    .banner {
+        background: url('banner-image.jpg') no-repeat center center/cover;
+        color: #fff;
+        text-align: center;
+        padding: 100px 20px;
+    }
+    
+    .banner-content h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }      
+    
+    .cta-button {
+        background: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+    
+    .courses, .testimonials {
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+    
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .course-list, .testimonial-list {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .course-item, .testimonial-item {
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 5px;
+        width: 30%;
+        text-align: center;
+    }
+    
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .courses{
+      color:darkmagenta;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Eduucation</div>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cources.html">Courses</a></li>
+                <li><a href="./about us.html">About Us</a></li>
+                <li><a href="./contact us.html">Contact</a></li>
+                <li><a href="./DOMTASK8.html" class="button">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Empower Your Learning Journey</h1>
+            <a href="#" class="cta-button">Explore Courses</a>
+            
+        </div>
+    </section>
+
+    <section class="courses">
+        <h2>Popular Courses</h2>
+        <div class="course-list">
+          </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 style="color: brown;">What Our Students Say</h2>
+        <div class="testimonial-list">
+            <div class="testimonial-item">
+                <p>"This platform changed my life!"</p>
+                <p>- Student A</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"Excellent resources and support."</p>
+                <p>- Teacher B</p>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+      
+        var ctaButton = document.querySelector('.cta-button');
+    
+        ctaButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Courses will be available soon!');
+        });
+    
+        function loadCourses() {
+            var courses = [
+            { title: 'Introduction to Programming', description: 'Learn the basics of programming using Python.' },
+            { title: 'Web Development', description: 'Build websites using HTML, CSS, and JavaScript.' },
+            { title: 'Data Science', description: 'Analyze data and build models using Python and R.' },
+            { title: 'Machine Learning', description: 'Understand and implement machine learning algorithms.' },
+            { title: 'Cyber Security', description: 'Learn how to protect systems and networks from cyber attacks.' },
+            { title: 'Cloud Computing', description: 'Explore cloud services and how to use them effectively.' }
+        ];
+
+    
+            var courseList = document.querySelector('.course-list');
+            courses.forEach(function(course) {
+                var courseItem = document.createElement('div');
+                courseItem.className = 'course-item';
+                courseItem.innerHTML = `<h3>${course.title}</h3><p>${course.description}</p>`;
+                courseList.appendChild(courseItem);
+            });
+        }
+    
+        loadCourses();
+    });
+    </script>
+</body>
+</html>
